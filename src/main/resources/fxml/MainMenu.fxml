@@ -1,0 +1,65 @@
+<!-- MainMenu.fxml -->
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gestao.projetos.controller.MainMenuController">
+   <top>
+      <VBox>
+         <children>
+            <MenuBar fx:id="menuBar">
+              <menus>
+                  <Menu fx:id="menuUsuarios" mnemonicParsing="false" text="Usuários">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#handleListarUsuarios" text="Listar Usuários" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleNovoUsuario" text="Novo Usuário" />
+                    </items>
+                  </Menu>
+                  <Menu fx:id="menuProjetos" mnemonicParsing="false" text="Projetos">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#handleListarProjetos" text="Listar Projetos" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleNovoProjeto" text="Novo Projeto" />
+                    </items>
+                  </Menu>
+                  <Menu fx:id="menuTarefas" mnemonicParsing="false" text="Tarefas">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#handleListarTarefas" text="Todas as Tarefas" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleMinhasTarefas" text="Minhas Tarefas" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleNovaTarefa" text="Nova Tarefa" />
+                    </items>
+                  </Menu>
+                  <Menu fx:id="menuRelatorios" mnemonicParsing="false" text="Relatórios">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#handleRelatoriosProjetos" text="Relatório de Projetos" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleRelatoriosTarefas" text="Relatório de Tarefas" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Sistema">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#handleDashboard" text="Dashboard" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleAlterarSenha" text="Alterar Senha" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleLogout" text="Logout" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleSobre" text="Sobre" />
+                    </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+            <ToolBar>
+               <items>
+                  <Label fx:id="lblUsuarioLogado" text="Usuário: " />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button mnemonicParsing="false" onAction="#handleDashboard" text="Dashboard" />
+               </items>
+            </ToolBar>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <Label text="Carregando..." />
+   </center>
+</BorderPane>

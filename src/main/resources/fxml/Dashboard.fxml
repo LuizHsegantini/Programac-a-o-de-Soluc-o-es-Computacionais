@@ -1,0 +1,131 @@
+<!-- Dashboard.fxml -->
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gestao.projetos.controller.DashboardController">
+   <content>
+      <VBox spacing="20.0">
+         <children>
+            <Label text="Dashboard - Visão Geral">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            
+            <!-- Estatísticas Gerais -->
+            <TitledPane collapsible="false" text="Estatísticas Gerais">
+               <content>
+                  <GridPane hgap="20.0" vgap="10.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <VBox alignment="CENTER" style="-fx-background-color: #e3f2fd; -fx-padding: 10;">
+                           <children>
+                              <Label fx:id="lblTotalProjetos" text="0">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Total de Projetos" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" style="-fx-background-color: #fff3e0; -fx-padding: 10;" GridPane.columnIndex="1">
+                           <children>
+                              <Label fx:id="lblProjetosAndamento" text="0">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Projetos em Andamento" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" style="-fx-background-color: #f3e5f5; -fx-padding: 10;" GridPane.columnIndex="2">
+                           <children>
+                              <Label fx:id="lblTotalUsuarios" text="0">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Total de Usuários" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" style="-fx-background-color: #e8f5e8; -fx-padding: 10;" GridPane.rowIndex="1">
+                           <children>
+                              <Label fx:id="lblTotalTarefas" text="0">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Total de Tarefas" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" style="-fx-background-color: #fff9c4; -fx-padding: 10;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <Label fx:id="lblTarefasPendentes" text="0">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Tarefas Pendentes" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" style="-fx-background-color: #ffecb3; -fx-padding: 10;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <children>
+                              <Label fx:id="lblTarefasEmExecucao" text="0">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Tarefas em Execução" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </GridPane>
+               </content>
+            </TitledPane>
+            
+            <!-- Projetos Recentes -->
+            <TitledPane collapsible="false" text="Projetos Recentes">
+               <content>
+                  <TableView fx:id="tblProjetosRecentes" prefHeight="200.0">
+                    <columns>
+                      <TableColumn fx:id="colProjetoNome" prefWidth="200.0" text="Nome" />
+                        <TableColumn fx:id="colProjetoStatus" prefWidth="120.0" text="Status" />
+                        <TableColumn fx:id="colProjetoGerente" prefWidth="150.0" text="Gerente" />
+                        <TableColumn fx:id="colProjetoProgresso" prefWidth="100.0" text="Progresso %" />
+                    </columns>
+                  </TableView>
+               </content>
+            </TitledPane>
+            
+            <!-- Tarefas Recentes -->
+            <TitledPane collapsible="false" text="Tarefas Recentes">
+               <content>
+                  <TableView fx:id="tblTarefasRecentes" prefHeight="200.0">
+                    <columns>
+                      <TableColumn fx:id="colTarefaTitulo" prefWidth="200.0" text="Título" />
+                        <TableColumn fx:id="colTarefaProjeto" prefWidth="150.0" text="Projeto" />
+                        <TableColumn fx:id="colTarefaStatus" prefWidth="120.0" text="Status" />
+                        <TableColumn fx:id="colTarefaResponsavel" prefWidth="150.0" text="Responsável" />
+                    </columns>
+                  </TableView>
+               </content>
+            </TitledPane>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </content>
+</ScrollPane>

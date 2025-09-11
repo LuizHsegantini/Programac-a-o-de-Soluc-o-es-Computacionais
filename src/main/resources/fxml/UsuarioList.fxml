@@ -1,0 +1,38 @@
+<!-- UsuarioList.fxml -->
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gestao.projetos.controller.UsuarioListController">
+   <children>
+      <HBox alignment="CENTER_LEFT" spacing="10.0">
+         <children>
+            <Label text="Gerenciamento de Usuários">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button mnemonicParsing="false" onAction="#handleNovo" text="Novo Usuário" />
+            <Button mnemonicParsing="false" onAction="#handleRefresh" text="Atualizar" />
+         </children>
+      </HBox>
+      
+      <TableView fx:id="tblUsuarios" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn fx:id="colNome" prefWidth="200.0" text="Nome" />
+            <TableColumn fx:id="colEmail" prefWidth="200.0" text="Email" />
+            <TableColumn fx:id="colLogin" prefWidth="120.0" text="Login" />
+            <TableColumn fx:id="colPerfil" prefWidth="120.0" text="Perfil" />
+            <TableColumn fx:id="colStatus" prefWidth="80.0" text="Status" />
+            <TableColumn fx:id="colAcoes" prefWidth="150.0" text="Ações" />
+        </columns>
+      </TableView>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>
